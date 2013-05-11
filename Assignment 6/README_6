@@ -1,0 +1,21 @@
+COMPILING
+
+To compile the program, call
+   javac MazeSolver.java
+
+
+RUNNING
+
+To run the program, call
+   java MazeSolver <learning rate> <discount factor> <size of large positive reward> <size of large negative reward> <step cost> <key loss probability> <number of trajectories to run>
+
+For example,
+    java MazeSolver .2 .9 100 -100 -1 .7 1000
+Will try to solve the maze set up in the problm set, with a learning rate of .2, a discount factor of .9 and will run for 1000 trajectories, and then print out the policy.
+
+CLASS RELATIONSHIPS
+MazeSolver creates a Maze, and keeps track of the state it is in.  It then decides what move it should do, and asks Maze what State that puts it in.  It then updates the Q value for the state it was in previously, and moves into tho new state.
+
+Maze stores all of the possible States that it can have, sets them up with the correct values and so on, and impliments movement through the maze, as well as a few other small hepler methods needed to solve the Maze.
+
+States, once created, store it's statistics (such as location, whether it has a key, and power level) as well as the Q values for that state.  It also keeps track of if that state has been reached, and if its Q values have ben updated (in order to only print states that have interesting information).
