@@ -1,0 +1,18 @@
+COMPILING
+
+To compile the program, call
+   javac MaxSatSolver
+
+
+RUNNING
+
+To run the program, call
+   java MaxSatSolver <location of SAT problem> <number of iterations to run it on> <number of candidate solutions to make per iteration> <positive learning rate> <negative learning rate> <mutation probability> <mutation amout>
+
+For example,
+    java MaxSatSolver ~/maxsat-problems/maxsat-random/highgirth/4SAT/HG-4SAT-V100-C900-5.cnf 2000 100 .1 .075 .02 .05
+Will solve the problem in HG-4SAT-V100-C900-5.cnf using 2000 iteration, creating 100 candidate solutions per iteration, a positive learning rate of .1, a negative learning rate of .075, a mutation probability of .02 and a mutation amount of .05.
+
+To turn off negative learning, open MaxSatSolver.java and set the boolean "useNegativeLearning" on line 25 to false.  To turn it back on, set it to true.
+
+To output data to stat files, change the boolean WRITE_STATS_TO_FILES on line 10 to true, and change the OUTPUT_FILE_LOCATION on line 11 to where you want the stat files to be outputted to.  Keep in mind, if WRITE_STATS_TO_FILES is set to true, the program will ignore any command line parameters, and instead run based on the method "runAllVariableCombinations" starting on line 302.
