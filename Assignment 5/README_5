@@ -1,0 +1,15 @@
+COMPILING
+
+To compile the program, call
+   javac NeuralNet.java
+
+
+RUNNING
+
+To run the program, call
+   java NeuralNet <learning rate> <# of nodes in the first hidden layer> <number of nodes in the 2nd hidden layer or 0 for a 3 layer net> <true to use bias nodes, false to not use bias nodes> <the location of the training file> <the location of the testing file> <the number of epochs to run>
+
+For example,
+    java NeuralNet .06 100 120 true ./digit-recognition-examples/digits.train.txt ./digit-recognition-examples/digits.test.txt 200
+
+Will solve train on the digits.train.txt file, test with the digits,test.txt file for 200 epochs, us a learning rate of .06, 100 non-bias nodes in the first hidden layer, 120 non-bias nodes in the second hidden layer and add an extra bias node in both of the hidden layers.
